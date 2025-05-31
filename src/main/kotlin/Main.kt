@@ -13,12 +13,16 @@ fun main(){
 fun fizzBuzz(number : Int) : List<String>{
     val result : MutableList<String> = mutableListOf() //[1,2,"Fizz",4,"Buzz","Fizz",7,8,"Fizz"."Buzz"]
     for (currentNumber in 1..number){ 1..15
-        when{
-            currentNumber % 3 == 0 && currentNumber % 5 == 0 -> result.add("FizzBuzz")
-            currentNumber % 3 == 0 -> result.add("Fizz")
-            currentNumber % 5 == 0 -> result.add("Buzz")
-            else -> result.add(currentNumber.toString())
-        }
+        val value = calculateSingleNumber(currentNumber)
+        result.add(value)
     }
     return result
+}
+fun calculateSingleNumber(currentNumber: Int) : String{
+    return when{
+        currentNumber % 3 == 0 && currentNumber % 5 == 0 -> "FizzBuzz"
+        currentNumber % 3 == 0 -> "Fizz"
+        currentNumber % 5 == 0 -> "Buzz"
+        else -> currentNumber.toString()
+    }
 }
