@@ -7,19 +7,21 @@
     For all other numbers, include the number itself as a string in the list.
 
 */
-fun main(){
+fun main() {
     println(fizzBuzz(20))
 }
-fun fizzBuzz(number : Int) : List<String>{
-    val result : MutableList<String> = mutableListOf() //[1,2,"Fizz",4,"Buzz","Fizz",7,8,"Fizz"."Buzz"]
-    for (currentNumber in 1..number){ 1..15
+
+fun fizzBuzz(number: Int): List<String> {
+    val result: MutableList<String> = mutableListOf() //[1,2,"Fizz",4,"Buzz","Fizz",7,8,"Fizz"."Buzz"]
+    for (currentNumber in 1..number) {
         val value = calculateSingleNumber(currentNumber)
         result.add(value)
     }
     return result
 }
-fun calculateSingleNumber(currentNumber: Int) : String{
-    return when{
+
+fun calculateSingleNumber(currentNumber: Int): String {
+    return when {
         currentNumber % 3 == 0 && currentNumber % 5 == 0 -> "FizzBuzz"
         currentNumber % 3 == 0 -> "Fizz"
         currentNumber % 5 == 0 -> "Buzz"
