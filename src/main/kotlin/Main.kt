@@ -1,0 +1,27 @@
+/* FizzBuzz Task
+    Write a Function that takes an integer n as input and returns a list of strings representing numbers from 1 to n.
+
+    if a number is divisible by 3 , replace it with the string "Fizz".
+    if a number is divisible by 5 , replace it with the string "Buzz".
+    if a number is divisible by both 3 and 5 , replace it with the string "FizzBuzz".
+    For all other numbers, include the number itself as a string in the list.
+
+*/
+fun main(){
+    println(fizzBuzz(20))
+}
+fun fizzBuzz(number : Int) : List<String>{
+    val result : MutableList<String> = mutableListOf() //[1,2,"Fizz",4,"Buzz","Fizz",7,8,"Fizz"."Buzz"]
+    for (currentNumber in 1..number){ 1..15
+        if (currentNumber % 3 == 0 && currentNumber % 5 == 0){
+            result.add("FizzBuzz")
+        }else if (currentNumber % 3 == 0){
+            result.add("Fizz")
+        }else if (currentNumber % 5 == 0){
+            result.add("Buzz")
+        }else{
+            result.add(currentNumber.toString())
+        }
+    }
+    return result
+}
