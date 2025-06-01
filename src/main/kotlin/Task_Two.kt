@@ -9,12 +9,10 @@ fun main(){
 
 }
 fun findIndexOfEvenNumber(list : List<Int>) : Int{
-    var result = -1
-    for (i in 0 until list.size){ //indices
-        if (list[i] % 2 == 0){
-            result = i
-            break
+    list.forEachIndexed { index, number ->
+        if(number % 2 == 0){
+            return index
         }
     }
-    return result
+    return -1
 }
