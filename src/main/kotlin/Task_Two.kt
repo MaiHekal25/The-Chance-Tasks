@@ -8,11 +8,4 @@ fun main(){
     println(findIndexOfEvenNumber(listOf(11,3,7,9)))
 
 }
-fun findIndexOfEvenNumber(list : List<Int>) : Int{
-    list.forEachIndexed { index, number ->
-        if(number % 2 == 0){
-            return index
-        }
-    }
-    return -1
-}
+fun findIndexOfEvenNumber(list : List<Int>) = list.indexOfFirst { it % 2 == 0 }
