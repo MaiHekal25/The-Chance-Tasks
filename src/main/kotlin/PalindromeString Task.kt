@@ -4,22 +4,14 @@
     The function should return true if the input string is a palindrome and false otherwise.
  */
 fun main() {
-    println(isPalindrome("Level"))
-    println(isPalindrome("Hello"))
+    val listOfInputs = listOf("Level", "Hello", "abb", "Wow")
+    for (input in listOfInputs) {
+        println("Is $input a palindrome? ${isPalindrome(input)}")
+    }
 
 }
 
 fun isPalindrome(input: String): Boolean {
-    val newInputWithIgnore = input.lowercase()
-    var leftPointer = 0
-    var rightPointer = input.length - 1
-
-    while (leftPointer < rightPointer) {
-
-        if (newInputWithIgnore[leftPointer] != newInputWithIgnore[rightPointer])
-            return false
-        leftPointer++
-        rightPointer--
-    }
-    return true
+    val normalized = input.lowercase()
+    return normalized == normalized.reversed()
 }
